@@ -4,11 +4,20 @@ namespace app\models;
 
 use Yii;
 
-class User extends \yii\db\ActiveRecord
+/**
+ * This is the model class for table "mahasiswa".
+ *
+ * @property int $id
+ * @property string $nama
+ */
+class Mahasiswa extends \yii\db\ActiveRecord
 {
+    /**
+     * {@inheritdoc}
+     */
     public static function tableName()
     {
-        return 'users';
+        return 'mahasiswa';
     }
 
     /**
@@ -17,8 +26,8 @@ class User extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['username'], 'required'],
-            [['username'], 'string', 'max' => 21],
+            [['nama'], 'required'],
+            [['nama'], 'string', 'max' => 21],
         ];
     }
 
@@ -29,7 +38,7 @@ class User extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'username' => 'Username',
+            'nama' => 'Nama',
         ];
     }
 }
